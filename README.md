@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 # EC2 Monitoring and Remediation System \- ServiceNow Implementation
 
 ## Overview
@@ -14,7 +6,7 @@
 
 **Your Role:** As a ServiceNow Admin and Jr Developer at Netflix, you've been tasked with building a semi-automated incident response system that helps the DevOps engineer team quickly remediate failing AWS EC2 instances that could impact streaming quality for millions of viewers.
 
-**Why This Matters:** Last week, a critical AWS EC2 instance failure in the US-East region caused buffering issues for viewers streaming popular series during peak hours. The incident went undetected for 45 minutes because the existing monitoring system wasn't integrated with ServiceNow, and DevOps engineers had to manually search through documentation to find remediation procedures. This resulted in viewer complaints, trending social media criticism, and potential subscriber churn.
+**Why This Matters:** Last week, a critical AWS EC2 instance failure in the US-East region caused buffering issues for viewers streaming popular series during peak hours. The incident went undetected for 45 minutes because the existing monitoring system wasn't integrated with ServiceNow, and DevOps engineers had to search through documentation to find remediation procedures manually. This resulted in viewer complaints, trending social media criticism, and potential subscriber churn.
 
 **The Business Problem:** Netflix's DevOps team needs a centralized system that automatically creates incidents when EC2 instances fail, provides AI-powered knowledge retrieval for remediation guidance, sends remediation guidance through Slack notifications, and allows engineers to trigger AWS remediation directly from ServiceNow during critical incidents.
 
@@ -39,7 +31,7 @@
    - Capture every remediation attempt for audit and analysis
 4. **Test and Validate the Working System (Step 8\)**
 
-   - Demonstrate successful EC2 remediation workflow
+   - Demonstrate a successful EC2 remediation workflow
    - Verify AI knowledge retrieval functionality
    - Confirm incident creation and Slack notification delivery
 
@@ -52,12 +44,12 @@ A scoped application was created with exact naming, as precise naming is require
 
 ### Step 2: Table Structure Requirements
 
-An EC2 Instance table and Remediation
 **Important:** Once you create the EC2 Instance table with the correct name and scope, the AWS Integration Server will automatically populate it with EC2 instance data (instance ID and status) every minute. The instances will turn "OFF" every 10 minutes to provide opportunities for testing your remediation system.
 
 **EC2 Instance Table:** Create table name `EC2 Instance` in your scoped application.
 
-Required fields (note that some fields are automatically created by ServiceNow, others must be manually added):
+Required fields (note that ServiceNow automatically creates some fields; others must be manually added):
+<img width="938" height="410" alt="image" src="https://github.com/user-attachments/assets/4d276cdb-419c-41d3-a0d3-e6fa6a624169" />
 
 - Instance name (String, 40 characters)
 - Instance ID (String, 40 characters)
@@ -69,6 +61,8 @@ Required fields (note that some fields are automatically created by ServiceNow, 
 - Updates (Integer) \- auto-created
 
 **Remediation Log Table:** Create with table name `Remediation Log` in your scoped application.
+<img width="938" height="142" alt="image" src="https://github.com/user-attachments/assets/9b22248b-aabb-4035-9f2b-0edfb34bb38f" />
+<img width="926" height="360" alt="image" src="https://github.com/user-attachments/assets/c9b98767-1643-47f2-a395-81b5dca02614" />
 
 Required fields:
 
