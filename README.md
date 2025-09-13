@@ -49,7 +49,6 @@ A scoped application was created with exact naming, as precise naming is require
 **EC2 Instance Table:** Create table name `EC2 Instance` in your scoped application.
 
 Required fields (note that ServiceNow automatically creates some fields; others must be manually added):
-<img width="938" height="410" alt="image" src="https://github.com/user-attachments/assets/4d276cdb-419c-41d3-a0d3-e6fa6a624169" />
 
 - Instance name (String, 40 characters)
 - Instance ID (String, 40 characters)
@@ -60,9 +59,8 @@ Required fields (note that ServiceNow automatically creates some fields; others 
 - Updated by (String, 40 characters) \- auto-created
 - Updates (Integer) \- auto-created
 
+<img width="938" height="410" alt="image" src="https://github.com/user-attachments/assets/4d276cdb-419c-41d3-a0d3-e6fa6a624169" />
 **Remediation Log Table:** Create with table name `Remediation Log` in your scoped application.
-<img width="938" height="142" alt="image" src="https://github.com/user-attachments/assets/9b22248b-aabb-4035-9f2b-0edfb34bb38f" />
-<img width="926" height="360" alt="image" src="https://github.com/user-attachments/assets/c9b98767-1643-47f2-a395-81b5dca02614" />
 
 Required fields:
 
@@ -80,6 +78,9 @@ Required fields:
 - Updated (Date/Time) \- auto-created
 - Updated by (String, 40 characters) \- auto-created
 - Updates (Integer) \- auto-created
+  
+<img width="938" height="142" alt="image" src="https://github.com/user-attachments/assets/9b22248b-aabb-4035-9f2b-0edfb34bb38f" />
+<img width="926" height="360" alt="image" src="https://github.com/user-attachments/assets/c9b98767-1643-47f2-a395-81b5dca02614" />
 
 ### Step 3: AWS Integration Configuration
 
@@ -91,6 +92,8 @@ The following naming conventions are **mandatory** for the remediation system to
 - **Navigate to:** Connection & Credential Aliases
 - **Create the following Connection and Credential Alias:**
 - **Name:** `AWS Integration Server C C Alias`
+<img width="922" height="406" alt="image" src="https://github.com/user-attachments/assets/09f10300-e5d0-41cf-9d6c-ba47bdfa12e3" />
+
 
 **ServiceNow HTTP Connection:**
 
@@ -100,6 +103,7 @@ The following naming conventions are **mandatory** for the remediation system to
 - **Name:** `AWS Integration Server Connection`
 - **Host:** `codon-staging.emaginelc.com`
 - **Base path:** `/api/v1/queue/start`
+<img width="940" height="409" alt="image" src="https://github.com/user-attachments/assets/64628297-68ef-4109-8b4c-84d52f31ff2b" />
 
 
 **ServiceNow Credential Records (Type: Basic Auth):**
@@ -110,6 +114,7 @@ The following naming conventions are **mandatory** for the remediation system to
 - **Type:** Basic Authentication
 - **Username:** `admin`
 - **Password:** Use your ServiceNow instance login password for basic authentication with AWS Integration Server
+<img width="936" height="406" alt="image" src="https://github.com/user-attachments/assets/5fb5039a-5410-4433-a909-452274ae6c32" />
 
 ### Step 4: UI Action and Script Include Implementation
 
@@ -131,6 +136,8 @@ Use the provided code files from the GitHub repository:
 - **Show update:** Checked
 - **Client:** Checked
 - **List v2 Compatible:** Checked
+<img width="941" height="404" alt="image" src="https://github.com/user-attachments/assets/f64be377-ab9c-414e-95a4-402b14579596" />
+<img width="932" height="323" alt="image" src="https://github.com/user-attachments/assets/8e1f1586-8611-4e9d-bf04-7a717db3eb4e" />
 
 **Script Include Configuration:**
 
@@ -140,15 +147,24 @@ Use the provided code files from the GitHub repository:
 - **Accessible from:** This application scope only
 - **Glide AJAX enabled:** Checked
 - **Active:** Checked
+<img width="934" height="188" alt="image" src="https://github.com/user-attachments/assets/97bb7c5a-28e9-48fc-80e0-dd8e1307e56e" />
+<img width="937" height="290" alt="image" src="https://github.com/user-attachments/assets/69f12d8a-1905-4015-95d8-11de74437ace" />
 
 ### Step 5: Flow Designer Workflow Creation
 
 Create a single Flow Designer workflow within your scoped application that:
 
 - Triggers when EC2 instance status equals 'OFF'
+  <img width="787" height="271" alt="image" src="https://github.com/user-attachments/assets/f062f8f3-d7b1-4e18-98a9-1a577adeea03" />
+
 - Creates incident records for failed instances
+  <img width="772" height="338" alt="image" src="https://github.com/user-attachments/assets/bc441e73-ec11-4b75-b53d-bcf0deb2dbce" />
+
 - Uses the AI Search Custom action available in Flow Designer
+  <img width="789" height="239" alt="image" src="https://github.com/user-attachments/assets/c346ea66-9a90-4f69-83bc-3b41da0ebc50" />
+
 - Sends Slack notifications with retrieved knowledge articles using webhook (URL provided via Slack DM)
+  <img width="785" height="280" alt="image" src="https://github.com/user-attachments/assets/864ebbe3-0307-46ea-b108-ccc0f566a78d" />
 
 **Important:** Use Flow Designer's "Force Save" option to ensure all workflow components are included in your update set.
 
