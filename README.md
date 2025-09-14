@@ -193,6 +193,8 @@ The AI Search Custom action needs discoverable knowledge articles to retrieve du
 **Include these keywords to ensure AI Search discoverability:**
 
 - EC2, server, instance, restart, AWS, virtual machine, cloud server, EC2 server, reboot
+<img width="1907" height="684" alt="image" src="https://github.com/user-attachments/assets/0f0e4d83-94c1-46c3-9cef-0bf9de6b9894" />
+<img width="1891" height="876" alt="image" src="https://github.com/user-attachments/assets/c0ce81c1-69f1-443f-82a4-d07de329bc2c" />
 
 ## Step 8: Testing and Validation
 
@@ -200,7 +202,11 @@ The AI Search Custom action needs discoverable knowledge articles to retrieve du
 
 1. **Verify AWS Integration:** When you've successfully created your EC2 Instance table with the correct name and scope, the AWS Integration Server will automatically populate your table with EC2 information and status updates
 2. Use the "Trigger EC2 Remediation" button on EC2 Instance forms to demonstrate the remediation workflow
+   <img width="1900" height="520" alt="image" src="https://github.com/user-attachments/assets/c51e72b8-9d4b-42b0-9297-0eeb54914bf1" />
+
 3. Verify entries are created in the Remediation Log table when DevOps engineers click the remediation button
+
+<img width="1914" height="184" alt="image" src="https://github.com/user-attachments/assets/8e8f97e4-2cb1-44aa-9d23-9292400bee4b" />
 
 ### System Verification
 
@@ -213,6 +219,8 @@ The AI Search Custom action needs discoverable knowledge articles to retrieve du
 **Flow Execution:** Ensure your Flow Designer workflow creates incident records when triggered by EC2 failures.
 
 **Slack Integration:** Confirm Slack notifications are delivered to the DevOps channel using your assigned webhook URL.
+
+<img width="1370" height="270" alt="image" src="https://github.com/user-attachments/assets/bf8edb0f-9ac1-49c4-a48b-0252ce04f8c7" />
 
 ## Deliverables
 
