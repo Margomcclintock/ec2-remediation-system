@@ -218,6 +218,9 @@ The AI Search Custom action needs discoverable knowledge articles to retrieve du
 
 **Flow Execution:** Ensure your Flow Designer workflow creates incident records when triggered by EC2 failures.
 
+<img width="1905" height="904" alt="image" src="https://github.com/user-attachments/assets/0f3b2a42-efb5-4335-9968-0e62ee4a8045" />
+
+
 **Slack Integration:** Confirm Slack notifications are delivered to the DevOps channel using your assigned webhook URL.
 
 <img width="1370" height="270" alt="image" src="https://github.com/user-attachments/assets/bf8edb0f-9ac1-49c4-a48b-0252ce04f8c7" />
