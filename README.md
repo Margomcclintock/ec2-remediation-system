@@ -44,9 +44,9 @@ A scoped application was created with exact naming, as precise naming is require
 
 ### Step 2: Table Structure Requirements
 
-**Important:** Once you create the EC2 Instance table with the correct name and scope, the AWS Integration Server will automatically populate it with EC2 instance data (instance ID and status) every minute. The instances will turn "OFF" every 10 minutes to provide opportunities for testing your remediation system.
+**Important:** Once the EC2 Instance table was created with the correct name and scope, the AWS Integration Server automatically populated it with EC2 instance data (instance ID and status) every minute. The instances turn "OFF" every 10 minutes to provide opportunities for testing the remediation system.
 
-**EC2 Instance Table:** Create table name `EC2 Instance` in your scoped application.
+**EC2 Instance Table:** An "EC2 Instance" table was created in the scoped application.
 
 Required fields (note that ServiceNow automatically creates some fields; others must be manually added):
 
@@ -60,7 +60,9 @@ Required fields (note that ServiceNow automatically creates some fields; others 
 - Updates (Integer) \- auto-created
 
 <img width="938" height="410" alt="image" src="https://github.com/user-attachments/assets/4d276cdb-419c-41d3-a0d3-e6fa6a624169" />
-**Remediation Log Table:** Create with table name `Remediation Log` in your scoped application.
+
+ 
+**Remediation Log Table:**  Created with table name `Remediation Log` in the scoped application.
 
 Required fields:
 
@@ -84,7 +86,7 @@ Required fields:
 
 ### Step 3: AWS Integration Configuration
 
-The following naming conventions are **mandatory** for the remediation system to function:
+The following naming conventions were **mandatory** for the remediation system to function:
 
 **ServiceNow Connection & Credential Alias:**
 
@@ -113,14 +115,14 @@ The following naming conventions are **mandatory** for the remediation system to
 - **Name:** `AWS Integration Server Credentials`
 - **Type:** Basic Authentication
 - **Username:** `admin`
-- **Password:** Use your ServiceNow instance login password for basic authentication with AWS Integration Server
+- **Password:** I used my ServiceNow instance login password for basic authentication with AWS Integration Server
 <img width="936" height="406" alt="image" src="https://github.com/user-attachments/assets/5fb5039a-5410-4433-a909-452274ae6c32" />
 
 ### Step 4: UI Action and Script Include Implementation
 
-**Both components must be created within your scoped application.**
+**Both components were created within the scoped application.**
 
-Use the provided code files from the GitHub repository:
+I used the provided code files from the GitHub repository:
 
 - `trigger_EC2_Remediation.js` for the UI Action
 - `EC2RemediationHelper.js` for the Script Include
@@ -152,7 +154,7 @@ Use the provided code files from the GitHub repository:
 
 ### Step 5: Flow Designer Workflow Creation
 
-Create a single Flow Designer workflow within your scoped application that:
+I created a single Flow Designer workflow within the scoped application that:
 
 - Triggers when EC2 instance status equals 'OFF'
   <img width="787" height="271" alt="image" src="https://github.com/user-attachments/assets/f062f8f3-d7b1-4e18-98a9-1a577adeea03" />
@@ -166,31 +168,23 @@ Create a single Flow Designer workflow within your scoped application that:
 - Sends Slack notifications with retrieved knowledge articles using webhook (URL provided via Slack DM)
   <img width="785" height="280" alt="image" src="https://github.com/user-attachments/assets/864ebbe3-0307-46ea-b108-ccc0f566a78d" />
 
-**Important:** Use Flow Designer's "Force Save" option to ensure all workflow components are included in your update set.
+**Important:** I used Flow Designer's "Force Save" option to ensure all workflow components are included in my update set.
 
 ### Step 6: AI Search Integration
 
-Use the AI Search Custom action available in Flow Designer to retrieve knowledge articles during workflow execution. This action requires three parameters:
+I used the AI Search Custom action available in Flow Designer to retrieve knowledge articles during workflow execution. This action required three parameters:
 
 - **Search Term:** EC2-related search terms for knowledge retrieval
 - **Enable Detailed Logging:** Must be enabled for proper functionality
 - **Search App:** Research which AI Search App contains Knowledge Base articles on your instance and identify the correct search app name to use
 
-Research what AI Search Apps are available on your instance and understand what sources they contain to determine which app to specify in the AI Search Custom action.
-You can find the Search Apps by navigating to **All\>AI Search Admin\>AI Search Admin Home\>Applications** in your instance.
-
-Here’s a guide on how you can test the **AI Search Custom** Action and familiarize yourself with its function:
-[https://scribehow.com/viewer/Exploring_the_Workflow_Action_AI_Search_Custom__j6fD3CTxSRKIVuz7C47nzg?referrer=workspace](https://scribehow.com/viewer/Exploring_the_Workflow_Action_AI_Search_Custom__j6fD3CTxSRKIVuz7C47nzg?referrer=workspace)
-
-Reference ServiceNow documentation on AI Search and AI Search Apps: [https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/ai-search/concept/configuring-ais.html](https://www.servicenow.com/docs/bundle/yokohama-platform-administration/page/administer/ai-search/concept/configuring-ais.html)
-
 ### Step 7: Knowledge Base Content
 
-The AI Search Custom action needs discoverable knowledge articles to retrieve during incidents. Create at least one knowledge base article that demonstrates the remediation process.
+The AI Search Custom action needs discoverable knowledge articles to retrieve during incidents. I created at least one knowledge base article that demonstrated the remediation process.
 
 **Knowledge Article Content:** "Run the UI Action 'Trigger EC2 Remediation' on the associated record."
 
-**Include these keywords to ensure AI Search discoverability:**
+**Included these keywords to ensure AI Search discoverability:**
 
 - EC2, server, instance, restart, AWS, virtual machine, cloud server, EC2 server, reboot
 <img width="1907" height="684" alt="image" src="https://github.com/user-attachments/assets/0f0e4d83-94c1-46c3-9cef-0bf9de6b9894" />
@@ -200,38 +194,37 @@ The AI Search Custom action needs discoverable knowledge articles to retrieve du
 
 ### DevOps User Testing
 
-1. **Verify AWS Integration:** When you've successfully created your EC2 Instance table with the correct name and scope, the AWS Integration Server will automatically populate your table with EC2 information and status updates
-2. Use the "Trigger EC2 Remediation" button on EC2 Instance forms to demonstrate the remediation workflow
+1. **Verify AWS Integration:** When the EC2 Instance Tbale was successfully created with the correct name and scope, the AWS Integration Server automatically populated the table with EC2 information and status updates
+2. I used the "Trigger EC2 Remediation" button on EC2 Instance forms to demonstrate the remediation workflow
    <img width="1900" height="520" alt="image" src="https://github.com/user-attachments/assets/c51e72b8-9d4b-42b0-9297-0eeb54914bf1" />
 
-3. Verify entries are created in the Remediation Log table when DevOps engineers click the remediation button
+3. I verified that the entries were created in the Remediation Log table when DevOps engineers click the remediation button
 
 <img width="1914" height="184" alt="image" src="https://github.com/user-attachments/assets/8e8f97e4-2cb1-44aa-9d23-9292400bee4b" />
 
 ### System Verification
 
-**AI Search Execution Logs:** Verify AI Search functionality by checking System Logs:
+**AI Search Execution Logs:** I verified the AI Search functionality by checking the System Logs:
 
 - Navigate to: System Logs \> System Log \> All
 - Filter: All \> Created on Today \> Level \>= Information \> Message starts with "AI Search"
 - Confirm your workflow successfully retrieved knowledge articles
 
-**Flow Execution:** Ensure your Flow Designer workflow creates incident records when triggered by EC2 failures.
+**Flow Execution:** I ensured my Flow Designer workflow created incident records when triggered by EC2 failures.
 
 <img width="1905" height="904" alt="image" src="https://github.com/user-attachments/assets/0f3b2a42-efb5-4335-9968-0e62ee4a8045" />
 
 
-**Slack Integration:** Confirm Slack notifications are delivered to the DevOps channel using your assigned webhook URL.
+**Slack Integration:** Confirm Slack notifications were delivered to the DevOps channel using my assigned webhook URL.
 
 <img width="1370" height="270" alt="image" src="https://github.com/user-attachments/assets/bf8edb0f-9ac1-49c4-a48b-0252ce04f8c7" />
 
 ## Deliverables
 
 ### Update Set Requirements
+<img width="1885" height="902" alt="image" src="https://github.com/user-attachments/assets/d56516ba-3533-40e7-9fdc-05fde960129f" />
 
-**Complete all implementation work before creating your update set.** Add components to update set after verifying functionality.
-
-Your update set must contain these working components:
+<img width="1851" height="518" alt="image" src="https://github.com/user-attachments/assets/b8f2256e-2257-49a4-941a-c7bf1bf19a66" />
 
 
 ## Architecture Diagram
