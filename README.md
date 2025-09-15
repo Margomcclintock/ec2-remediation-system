@@ -231,8 +231,17 @@ The AI Search Custom action needs discoverable knowledge articles to retrieve du
 <img width="1891" height="958" alt="Diagram" src="https://github.com/user-attachments/assets/1284d6b0-61fb-4256-b8aa-d383d10e6d65" />
 
 
-## Optimization
-nhklhbik
-
 ## DevOps Usage
-guogubjl
+The EC2 Monitoring and Remediation system was implemented to detect critical AWS EC2 instance failures. When the EC2 table reports a critical incident, the remediation table logs the incident details so the DevOps team can see the exact time, date, payload, and HTTP status code associated with the failure.
+
+From there, a DevOps team member can select the incident in the EC2 table and click the “Trigger EC2 Remediation” button. Doing so launches a custom AI Search action that surfaces relevant remediation documentation and automatically delivers it to the DevOps team via Slack notification.
+
+Previously, the DevOps team had to manually search through documentation to find the right remediation steps. With the AI-powered retrieval and notification system in place, those manual searches are eliminated. Instead, AI quickly locates the correct solution, enabling faster problem resolution.
+
+**Business Impact**
+
+The EC2 Monitoring and Remediation system eliminates the delays and manual effort that previously slowed down Netflix’s response to AWS EC2 failures. By automatically logging incidents with exact time, date, payload, and HTTP status codes, engineers no longer waste time piecing together failure details.
+
+Instead of manually searching through documentation, the AI-powered retrieval surfaces the right remediation steps instantly and delivers them to the DevOps team in Slack. With one click, engineers can trigger remediation directly from ServiceNow, cutting resolution time from nearly an hour to just minutes.
+
+This faster response reduces buffering issues for viewers, prevents large-scale streaming interruptions, and protects Netflix from negative customer experiences, social media backlash, and potential subscriber churn.
