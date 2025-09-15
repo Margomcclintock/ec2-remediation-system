@@ -242,6 +242,6 @@ Previously, the DevOps team had to manually search through documentation to find
 
 The EC2 Monitoring and Remediation system eliminates the delays and manual effort that previously slowed down Netflix’s response to AWS EC2 failures. By automatically logging incidents with exact time, date, payload, and HTTP status codes, engineers no longer waste time piecing together failure details.
 
-Instead of manually searching through documentation, the AI-powered retrieval surfaces the right remediation steps instantly and delivers them to the DevOps team in Slack. With one click, engineers can trigger remediation directly from ServiceNow, cutting resolution time from nearly an hour to just minutes.
+Instead of manually searching through documentation, the AI-powered retrieval surfaces the right remediation steps instantly and delivers them to the DevOps team in Slack. With one click, engineers can trigger remediation directly from ServiceNow, cutting resolution time from nearly an hour to minutes.
 
 This faster response reduces buffering issues for viewers, prevents large-scale streaming interruptions, and protects Netflix from negative customer experiences, social media backlash, and potential subscriber churn.
