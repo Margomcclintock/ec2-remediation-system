@@ -10,6 +10,11 @@
 
 **The Business Problem:** Netflix's DevOps team needs a centralized system that automatically creates incidents when EC2 instances fail, provides AI-powered knowledge retrieval for remediation guidance, sends remediation guidance through Slack notifications, and allows engineers to trigger AWS remediation directly from ServiceNow during critical incidents.
 
+---
+## Architecture Diagram
+<img width="1393" height="702" alt="image" src="https://github.com/user-attachments/assets/00cac1a4-24ab-4baa-ad1d-aa69bafdc3e1" />
+
+----
 ## System Overview
 
 **Netflix's AWS Integration Server:** Netflix operates an external monitoring system called the AWS Integration Server that continuously monitors EC2 instance health across all AWS regions and integrates with ServiceNow infrastructure. This server automatically populates your custom tables with real EC2 instance data every 1 minute. When you create your tables with the correct naming and scope, this system will detect them and begin sending instance information (ID, name, and status \- "ON" for operational, "OFF" for failed/stopped instances).
@@ -225,10 +230,6 @@ The AI Search Custom action needs discoverable knowledge articles to retrieve du
 <img width="1885" height="902" alt="image" src="https://github.com/user-attachments/assets/d56516ba-3533-40e7-9fdc-05fde960129f" />
 
 <img width="1851" height="518" alt="image" src="https://github.com/user-attachments/assets/b8f2256e-2257-49a4-941a-c7bf1bf19a66" />
-
-
-## Architecture Diagram
-<img width="1891" height="958" alt="Diagram" src="https://github.com/user-attachments/assets/1284d6b0-61fb-4256-b8aa-d383d10e6d65" />
 
 
 ## DevOps Usage
