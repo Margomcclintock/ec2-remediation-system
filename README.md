@@ -12,7 +12,8 @@
 
 ---
 ## Architecture Diagram
-<img width="739" height="324" alt="image" src="https://github.com/user-attachments/assets/a256b648-ff84-45ff-bd32-a97279324917" />
+<img width="1624" height="717" alt="image" src="https://github.com/user-attachments/assets/2415a93f-ef83-4e62-ab3f-d8be4e627a69" />
+
 
 
 ----
