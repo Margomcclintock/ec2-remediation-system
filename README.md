@@ -19,7 +19,7 @@
 ----
 ## System Overview
 
-**Netflix's AWS Integration Server:** Netflix operates an external monitoring system called the AWS Integration Server that continuously monitors EC2 instance health across all AWS regions and integrates with ServiceNow infrastructure. This server automatically populates your custom tables with real EC2 instance data every 1 minute. When you create your tables with the correct naming and scope, this system will detect them and begin sending instance information (ID, name, and status \- "ON" for operational, "OFF" for failed/stopped instances).
+**Netflix's AWS Integration Server:** Netflix operates an external monitoring system called the AWS Integration Server that continuously monitors EC2 instance health across all AWS regions and integrates with ServiceNow infrastructure. This server automatically populates the custom tables with real EC2 instance data every 1 minute. Once the tables were created with the correct naming and scope, this system detected them and began sending instance information (ID, name, and status \- "ON" for operational, "OFF" for failed/stopped instances).
 
 ## Implementation Steps
 1. **Build EC2 Monitoring Infrastructure (Steps 1 \- 3\)**
